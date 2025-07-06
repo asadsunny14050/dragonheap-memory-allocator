@@ -1,0 +1,10 @@
+.clang-format
+build_config.lua
+dragonheap
+playground
+playground.c
+a.out
+obj
+*.o
+.idea
+src/debug_functions.c
