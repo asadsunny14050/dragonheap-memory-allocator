@@ -1,10 +1,12 @@
 .clang-format
 build_config.lua
 dragonheap
+use_dragonheap
 playground
 playground.c
 a.out
 obj
 *.o
+*.a
 .idea
 src/debug_functions.c
