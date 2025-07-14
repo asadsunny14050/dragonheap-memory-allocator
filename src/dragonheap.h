@@ -23,3 +23,6 @@ void *dragon_claim(void *hoard);
 void *dragon_reforge(void *hoard, size_t size); // realloc
 // free function
 void dragon_release(void *hoard);
+
+// debug functions
+void print_free_list();
