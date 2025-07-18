@@ -1,8 +1,8 @@
 CC = gcc 
 CFLAGS = -Wall -Wextra -g
 
-SRCS = src/dragonheap.c
-LIB_OBJ = dragonheap.o
+SRCS = src/dragonheap.c src/memory_store.c
+LIB_OBJ = dragonheap.o memory_store.o
 STATIC_LIB = libdragonheap.a
 
 TARGET = use_dragonheap
@@ -13,9 +13,9 @@ all: example.c $(STATIC_LIB)
 lib: $(STATIC_LIB)
 
 $(STATIC_LIB): $(LIB_OBJ)
-	ar rcs $@ $<
+	ar rcs $@ $^
 
-$(LIB_OBJ): $(SRCS)
+%.o: src/%.c
 	$(CC) $(CFLAGS) -c $< -Isrc -o $@
 
 clean: 

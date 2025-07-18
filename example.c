@@ -39,7 +39,16 @@ int main() {
 
   void *mem4 = dragon_hoard(33);
   print_free_list();
-  // print_dragon_heap(dragon_heap);
+
+  dragon_reforge(mem4, 60);
+  print_dragon_heap();
+  dragon_release(dragon_hoard(10));
+  print_free_list();
+  print_dragon_heap();
+  dragon_reforge(mem4, 100);
+  print_free_list();
+  print_dragon_heap();
+
   // print_dragon_heap(dragon_heap);
 
   return 0;
