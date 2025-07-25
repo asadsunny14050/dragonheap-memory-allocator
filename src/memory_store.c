@@ -5,16 +5,16 @@
 memory_chunk_t *dragon_heap = {0};
 free_list_t *dragon_free_list = {0};
 
-void print_dragon_heap() {
+void print_dragonheap() {
   printf("dragon_heap: ");
   memory_chunk_t *tmp = dragon_heap;
   while (tmp != NULL) {
     if (tmp == dragon_heap) {
 
-      printf("(%lu, %lu, %lu, %d)", tmp, tmp->previous_chunk, tmp->size, tmp->is_free);
+      printf("(%p, %p, %lu, %d)", tmp, tmp->previous_chunk, tmp->size, tmp->is_free);
     } else {
 
-      printf(" -> (%lu, %lu, %lu, %d)", tmp, tmp->previous_chunk, tmp->size, tmp->is_free);
+      printf(" -> (%p, %p, %lu, %d)", tmp, tmp->previous_chunk, tmp->size, tmp->is_free);
     }
     tmp = tmp->previous_chunk;
   }
@@ -26,7 +26,7 @@ void print_free_list() {
   free_list_t *iterator = dragon_free_list;
   while (iterator != NULL) {
 
-    printf("(%lu, %lu) -> ", iterator, iterator->next_free_chunk);
+    printf("(%p, %p) -> ", iterator, iterator->next_free_chunk);
     iterator = iterator->next_free_chunk;
   }
   printf("\n");

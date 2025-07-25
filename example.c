@@ -45,18 +45,18 @@ int main() {
   // then we want to resize the memory region from 33 to 60 bytes, anything below or equal to 33 should return an error
   printf("eighth action\n");
   dragon_reforge(mem4, 60);
-  print_dragon_heap();
+  print_dragonheap();
 
   // in the next two actions, we allocate and free the next adjacent chunk of memory to mem4 to test we can see upon further reallocation of mem4, does the realloc functions coalesces the next adjacent chunk, the chunk has to have enough size, if not enough size it sees if that insufficient chunk is at the program break, if so, it expands the heap
   printf("ninth action\n");
   dragon_release(dragon_hoard(10));
   print_free_list();
-  print_dragon_heap();
+  print_dragonheap();
 
   printf("tenth action\n");
   dragon_reforge(mem4, 100);
   print_free_list();
-  print_dragon_heap();
+  print_dragonheap();
   // the next set of lines tests to see if the "wanting to realloc chunk" isn't at the program break so thus can't expand the heap, and its next adjacent chunks aren't free, then it finds a new chunk from the free list or by expanding the heap by using the dragon_hoard function inside its implemention, if such a case it's encountered the new chunk copies the data from the old chunk, and the old chunk is freed and its data is emptied, and the pointer to the new chunk's hoard (the actual region to used by the user) is returned
   printf("eleventh action\n");
   void *mem5 = dragon_hoard(15);
@@ -73,7 +73,7 @@ int main() {
   strcpy(mem6 + 5, ", son!");
   printf("mem6: %s\n", (char *)mem6);
 
-  print_dragon_heap();
+  print_dragonheap();
   print_free_list();
 
   return 0;

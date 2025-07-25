@@ -137,7 +137,7 @@ void dragon_release(void *hoard) {
   // printf("hoard_meta_data: %lu\n", hoard_meta_data->size);
   hoard_meta_data->is_free = true;
   memset(hoard, 0, hoard_meta_data->size);
-  print_dragon_heap();
+  print_dragonheap();
 
   free_list_t *current_head = dragon_free_list;
   dragon_free_list = hoard;
