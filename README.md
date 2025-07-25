@@ -8,6 +8,8 @@ DragonHeap is a learning-focused memory allocator that provides an alternative t
 
 > ⚠️ **Note:** This is an educational project built for learning purposes and portfolio demonstration. It is not intended for production use.
 
+<img width="1077" height="763" alt="Screenshot 2025-07-24 210138" src="https://github.com/user-attachments/assets/501f973d-27a2-4af2-8c87-a82d64d725f9" />
+
 ## Features
 
 - **Custom Memory Management**: Three core functions that mirror standard library behavior
@@ -44,6 +46,8 @@ void print_free_list(void);
 Utility functions to print the current state of all memory chunks and the free list respectively.
 
 ## Architecture
+
+<img width="1005" height="537" alt="Screenshot 2025-07-24 205558" src="https://github.com/user-attachments/assets/8c123f2d-7da1-4540-96fa-cf3a1b586574" />
 
 DragonHeap maintains two primary data structures:
 
