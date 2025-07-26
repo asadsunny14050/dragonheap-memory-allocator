@@ -13,7 +13,7 @@ DragonHeap is a learning-focused memory allocator that provides an alternative t
 ## Features
 
 - **Custom Memory Management**: Three core functions that mirror standard library behavior
-- **Automatic Zero Initialization**: All allocated memory is automatically cleared, so no realloc
+- **Automatic Zero Initialization**: All allocated memory is automatically cleared, so no calloc
 - **Free List Optimization**: Reuses freed memory chunks when possible
 - **Metadata Tracking**: Maintains allocation information alongside user data
 - **Debug Utilities**: Built-in functions to inspect memory state
@@ -25,19 +25,21 @@ DragonHeap is a learning-focused memory allocator that provides an alternative t
 ```c
 void* dragon_hoard(size_t requested_size);
 ```
-```malloc```: Allocates memory of the specified size. Returns a pointer to the allocated memory region, automatically initialized to zero.
+The ```malloc``` allocates memory of the specified size. Returns a pointer to the allocated memory region, automatically initialized to zero.
 
 ```c
 void* dragon_reforge(void* hoard, size_t revised_size);
 ```
-```realloc```: Resizes an existing memory allocation. The `revised_size` must be greater than the original size, otherwise returns an error.
+The ```realloc``` resizes an existing memory allocation. The `revised_size` must be greater than the original size, otherwise returns an error.
 
 ```c
 void dragon_release(void* hoard);
 ```
-```free```: Frees the memory pointed to by `hoard` and adds it to the free list for potential reuse.
+The ```free``` releases the memory pointed to by `hoard` and adds it to the free list for potential reuse.
 
 ### Debug Functions
+
+<img width="996" height="101" alt="image" src="https://github.com/user-attachments/assets/8a1674c9-896b-452a-b268-f9b3612a4338" />
 
 ```c
 void print_dragonheap(void);
@@ -83,8 +85,8 @@ This will generate:
 DragonHeap/
 ├── src/
 │   ├── dragonheap.c      # Main allocator implementation
+|   ├── dragonheap.h      # Public Api Header
 │   └── [other .c files]  # Additional source files
-├── dragonheap.h          # Public API header
 ├── example.c             # Usage examples and tests
 ├── Makefile              # Build configuration
 └── README.md             # This file
