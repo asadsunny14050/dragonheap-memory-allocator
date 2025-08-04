@@ -25,12 +25,12 @@ DragonHeap is a learning-focused memory allocator that provides an alternative t
 ```c
 void* dragon_hoard(size_t requested_size);
 ```
-The ```malloc``` allocates memory of the specified size. Returns a pointer to the allocated memory region, automatically initialized to zero.
+The ```malloc``` allocates memory of the specified size. Returns a pointer to the allocated memory region, automatically initialized to zero. Returns ```NULL``` if it doesn't find any memory for use
 
 ```c
 void* dragon_reforge(void* hoard, size_t revised_size);
 ```
-The ```realloc``` resizes an existing memory allocation. The `revised_size` must be greater than the original size, otherwise returns an error.
+The ```realloc``` resizes an existing memory allocation. The `revised_size` must be greater than the original size, otherwise returns an error.  
 
 ```c
 void dragon_release(void* hoard);
