@@ -45,12 +45,10 @@ void *dragon_hoard(size_t requested_size) {
         memset(free_chunk_meta, 0, META_SIZE);
         memory_chunk_t *iterator = dragon_heap;
         if (current_head == free_chunk_meta) {
-          printf("clap");
           dragon_heap = chunk;
         }
         while (iterator != NULL) {
           if (iterator->previous_chunk == free_chunk_meta) {
-            printf("i'm running\n");
             iterator->previous_chunk = chunk;
             break;
           }
